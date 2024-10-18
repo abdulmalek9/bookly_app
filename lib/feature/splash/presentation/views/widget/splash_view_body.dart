@@ -1,6 +1,8 @@
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/app_images.dart';
+import 'package:bookly_app/feature/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -18,6 +20,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initAnmation();
+    navegationFunction();
+  }
+
+  void navegationFunction() {
+    Future.delayed(
+        const Duration(
+          seconds: kDurationValue,
+        ), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => const HomeView()));
+    });
   }
 
   @override
@@ -25,12 +38,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     // TODO: implement dispose
     super.dispose();
     slideController.dispose();
-
-    Future.delayed(
-        const Duration(
-          seconds: kDurationValue,
-        ),
-        () {});
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
   }
 
   @override
