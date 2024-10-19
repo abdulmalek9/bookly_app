@@ -1,7 +1,8 @@
-import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../../../constant.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
