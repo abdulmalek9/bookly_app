@@ -6,9 +6,11 @@ class CustomBestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 10,
+    return SliverList.builder(
+        // physics: const NeverScrollableScrollPhysics(),
+        // padding: EdgeInsets.zero,
+        itemCount: 40,
+        // shrinkWrap: true,
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 10),

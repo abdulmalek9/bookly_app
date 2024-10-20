@@ -41,9 +41,16 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        SliverFillRemaining(
-          child: CustomBestSellerListView(),
-        ),
+        CustomBestSellerListView(),
+        // SliverFillRemaining(
+        //   fillOverscroll: true,
+        //   child: CustomBestSellerListView(),
+        // ),
+        // SliverToBoxAdapter(
+        //   child: SizedBox(
+        //     height: 40,
+        //   ),
+        // )
       ],
     );
   }

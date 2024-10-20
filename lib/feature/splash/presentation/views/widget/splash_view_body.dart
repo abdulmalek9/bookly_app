@@ -1,8 +1,9 @@
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/app_images.dart';
-import 'package:bookly_app/feature/home/presentation/views/home_view.dart';
+import 'package:bookly_app/core/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -28,8 +29,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
         const Duration(
           seconds: kDurationValue,
         ), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const HomeView()));
+      // Navigator.of(context)
+      //     .pushReplacement(MaterialPageRoute(builder: (_) => const HomeView()));
+      GoRouter.of(context).pushReplacement(AppRoutes.khomeView);
     });
   }
 
