@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/utils/app_images.dart';
+import 'package:bookly_app/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,23 +7,11 @@ class CustomListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       alignment: AlignmentDirectional.bottomEnd,
       children: [
-        AspectRatio(
-          aspectRatio: 2.7 / 4,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.amber,
-              image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(Assets.imagesTestImage),
-              ),
-            ),
-          ),
-        ),
-        const Padding(
+        CustomBookImage(),
+        Padding(
           padding: EdgeInsets.only(right: 10.0, bottom: 14),
           child: CircleAvatar(
             backgroundColor: Colors.white38,
