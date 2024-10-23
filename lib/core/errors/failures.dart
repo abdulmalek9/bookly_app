@@ -32,8 +32,10 @@ class ServerFailure extends Failures {
   }
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+    if (statusCode == 400 || statusCode == 401) {
       return ServerFailure(response['error']['message']);
+    } else if (statusCode == 403) {
+      return ServerFailure("The error is $statusCode: You are forbidden");
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {
