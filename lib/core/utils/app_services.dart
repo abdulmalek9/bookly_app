@@ -18,7 +18,7 @@ class AppServices {
     Map<String, dynamic> data =
         await getRequestNewestBook(endsPoint: endsPoint);
     List<BookModel> books = [];
-    for (var item in data["item"]) {
+    for (var item in data["items"]) {
       books.add(BookModel.fromJson(item));
     }
 

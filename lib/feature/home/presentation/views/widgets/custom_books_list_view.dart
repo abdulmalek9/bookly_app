@@ -18,11 +18,15 @@ class CustomBooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: state.books.length,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
-                    child: CustomListViewItem(),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: CustomListViewItem(
+                      imageUrl: state
+                              .books[index].volumeInfo?.imageLinks?.thumbnail ??
+                          "",
+                    ),
                   );
                 }),
           );
