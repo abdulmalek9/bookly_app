@@ -19,7 +19,7 @@ class SearchViewBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomBestSellerListView(),
+        CustomNewsetBookListView(),
       ],
     );
   }

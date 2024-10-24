@@ -32,10 +32,10 @@ class BooksDetailesViewBody extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: BookRating(mainAxisAlignment: MainAxisAlignment.center),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 30.0),
+              //   child: BookRating(mainAxisAlignment: MainAxisAlignment.center),
+              // ),
               SizedBox(
                 height: 37,
               ),

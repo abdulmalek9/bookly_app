@@ -29,19 +29,22 @@ class HomeViewBody extends StatelessWidget {
                 child: CustomBooksListView(),
               ),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: kHpadding),
                 child: Text(
-                  "Best Seller",
+                  "Newset Books",
                   style: AppStyles.textStyle18,
                 ),
               ),
+              SizedBox(
+                height: 8,
+              )
             ],
           ),
         ),
-        CustomBestSellerListView(),
+        CustomNewsetBookListView(),
         // SliverFillRemaining(
         //   fillOverscroll: true,
         //   child: CustomBestSellerListView(),
