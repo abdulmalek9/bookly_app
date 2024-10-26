@@ -1,5 +1,5 @@
-import 'package:bookly_app/feature/home/presentation/views/widgets/custom_best_seller_list_view.dart';
 import 'package:bookly_app/feature/search/presentation/views/widgets/custom_search_field.dart';
+import 'package:bookly_app/feature/search/presentation/views/widgets/custom_searched_book_listView.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -19,7 +19,7 @@ class SearchViewBody extends StatelessWidget {
             ),
           ),
         ),
-        CustomNewsetBookListView(),
+        CustomSearchedBookListview(),
       ],
     );
   }

@@ -46,7 +46,7 @@ class CustomBooksSellesItem extends StatelessWidget {
                   height: 6,
                 ),
                 Text(
-                  books.volumeInfo!.authors!.first,
+                  books.volumeInfo!.authors?.first ?? "",
                   style: AppStyles.textStyle14,
                 ),
                 const SizedBox(
