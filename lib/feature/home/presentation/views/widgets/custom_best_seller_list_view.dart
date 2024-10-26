@@ -14,10 +14,7 @@ class CustomNewsetBookListView extends StatelessWidget {
         builder: (context, state) {
       if (state is NewsetBookSucsses) {
         return SliverList.builder(
-            // physics: const NeverScrollableScrollPhysics(),
-            // padding: EdgeInsets.zero,
             itemCount: state.books.length,
-            // shrinkWrap: true,
             itemBuilder: (context, index) {
               return Padding(
                 padding:

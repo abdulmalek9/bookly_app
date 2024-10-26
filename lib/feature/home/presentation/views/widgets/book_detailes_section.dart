@@ -2,10 +2,11 @@ import 'package:bookly_app/feature/home/presentation/views/widgets/custom_book_i
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_styles.dart';
+import '../../../data/model/book_model/book_model.dart';
 
 class BookDetailesSection extends StatelessWidget {
-  const BookDetailesSection({super.key});
-
+  const BookDetailesSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,20 +14,25 @@ class BookDetailesSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.18),
-          child: const CustomBookImage(),
+          child: CustomBookImage(
+            imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? "",
+          ),
         ),
         const SizedBox(
           height: 43,
         ),
-        const Text(
-          "The Jungle Book",
+        Text(
+          bookModel.volumeInfo!.title!,
           style: AppStyles.textStyle30,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
         ),
         Text(
-          "Rudyard Kipkling",
+          bookModel.volumeInfo?.authors?[0] ?? " ",
           style: AppStyles.textStyle16
               .copyWith(color: Colors.grey, fontStyle: FontStyle.italic),
         ),

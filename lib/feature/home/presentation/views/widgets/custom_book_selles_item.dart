@@ -2,7 +2,7 @@ import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/app_routes.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/feature/home/data/model/book_model/book_model.dart';
-import 'package:bookly_app/feature/home/presentation/views/widgets/book_rating.dart';
+// import 'package:bookly_app/feature/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +15,7 @@ class CustomBooksSellesItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoutes.kbookDetailesView);
+        GoRouter.of(context).push(AppRoutes.kbookDetailesView, extra: books);
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

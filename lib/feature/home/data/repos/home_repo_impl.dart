@@ -17,7 +17,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       List<BookModel> newestBooks = await appServices.getNewestBooks(
           endsPoint:
-              "volumes?Filtering=free-ebooks&Sorting=newest &q=computer science");
+              "volumes?Filtering=free-ebooks&Sorting=newest&q=computer science");
 
       return right(newestBooks);
     } catch (e) {
@@ -37,6 +37,27 @@ class HomeRepoImpl implements HomeRepo {
     try {
       List<BookModel> newestBooks = await appServices.getNewestBooks(
           endsPoint: "volumes?Filtering=free-ebooks&q=computer science");
+
+      return right(newestBooks);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failures, List<BookModel>>> fetchSimilarbooks(
+      {required String category}) async {
+    try {
+      List<BookModel> newestBooks = await appServices.getNewestBooks(
+          endsPoint:
+              "volumes?Filtering=free-ebooks&Sorting=relevance&q=$category");
 
       return right(newestBooks);
     } catch (e) {
